@@ -1,5 +1,5 @@
 {
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["custom.d.ts", "**/*.ts", "**/*.tsx"],
   "compilerOptions": {
     "strict": true,
     "esModuleInterop": true,
