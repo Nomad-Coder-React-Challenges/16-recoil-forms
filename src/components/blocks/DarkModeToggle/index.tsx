@@ -1,11 +1,14 @@
 import usePrefersColorScheme from '#hooks/usePrefersColorScheme';
+import { useTheme } from 'styled-components';
 import { ThemeState } from '#src/stores/appStateStore';
 import { useState } from 'react';
 import { useSetRecoilState } from 'recoil';
-import { Container, Text } from './DarkModeToggle.styled';
+import { Button, Icons } from './DarkModeToggle.styled';
 import { ToggleButton } from '#components/atoms';
+import { IconMoon, IconSun } from '#components/atoms/svgs';
 
 const DarkModeToggle = () => {
+  const theme = useTheme();
   const { preferDarkMode, isDarkMode } = usePrefersColorScheme();
   const [isOn, setIsOn] = useState(preferDarkMode);
   const setThemeState = useSetRecoilState(ThemeState);
@@ -17,10 +20,24 @@ const DarkModeToggle = () => {
     setThemeState(isOn ? 'light' : 'dark');
   };
   return (
-    <Container isDarkMode={isDarkMode}>
-      <Text>{themeText} Mode</Text>
-      <ToggleButton isOn={isOn} onClick={handleThemeClick} />
-    </Container>
+    <Button isDarkMode={isDarkMode} onClick={handleThemeClick}>
+      <Icons isDarkMode={isDarkMode}>
+        <IconSun
+          width={32}
+          height={32}
+          stroke={theme.colors.second[500]}
+          fill={theme.colors.second[500]}
+        />
+      </Icons>
+      <Icons isDarkMode={isDarkMode} isDarkIcon>
+        <IconMoon
+          width={24}
+          height={24}
+          stroke={theme.colors.primary[100]}
+          fill={theme.colors.primary[100]}
+        />
+      </Icons>
+    </Button>
   );
 };
 

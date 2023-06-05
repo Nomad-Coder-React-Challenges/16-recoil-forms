@@ -46,6 +46,9 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: Pretendard, sans-serif;
     background: ${(props) => props.theme.colors.mono.white};
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.2s;
   }
   img,
   picture,
