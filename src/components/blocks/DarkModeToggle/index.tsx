@@ -12,8 +12,6 @@ const DarkModeToggle = () => {
   const [isOn, setIsOn] = useState(preferDarkMode);
   const setThemeState = useSetRecoilState(ThemeState);
 
-  const themeText = isDarkMode ? 'Light' : 'Dark';
-
   const handleThemeClick = () => {
     setIsOn((prev) => !prev);
     setThemeState(isOn ? 'light' : 'dark');
