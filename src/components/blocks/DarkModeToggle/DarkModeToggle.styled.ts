@@ -12,12 +12,11 @@ const Button = styled.button<ThemeProps>`
   position: fixed;
   bottom: 36px;
   right: 36px;
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px;
   border-radius: 50%;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);

@@ -4,7 +4,6 @@ import { ThemeState } from '#src/stores/appStateStore';
 import { useState } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { Button, Icons } from './DarkModeToggle.styled';
-import { ToggleButton } from '#components/atoms';
 import { IconMoon, IconSun } from '#components/atoms/svgs';
 
 const DarkModeToggle = () => {
@@ -23,16 +22,16 @@ const DarkModeToggle = () => {
     <Button isDarkMode={isDarkMode} onClick={handleThemeClick}>
       <Icons isDarkMode={isDarkMode}>
         <IconSun
-          width={32}
-          height={32}
+          width={28}
+          height={28}
           stroke={theme.colors.second[500]}
           fill={theme.colors.second[500]}
         />
       </Icons>
       <Icons isDarkMode={isDarkMode} isDarkIcon>
         <IconMoon
-          width={24}
-          height={24}
+          width={20}
+          height={20}
           stroke={theme.colors.primary[100]}
           fill={theme.colors.primary[100]}
         />

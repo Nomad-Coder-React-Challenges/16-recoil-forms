@@ -1,4 +1,4 @@
-import { Tag } from './Tag';
-import { ToggleButton } from './ToggleButton';
+import { Input } from './Input';
+import { Button } from './Button';
 
-export { Tag, ToggleButton };
+export { Input, Button };
